@@ -4,12 +4,14 @@
 #
 Name     : mvn-jmock
 Version  : 2.8.4
-Release  : 1
+Release  : 2
 URL      : https://github.com/jmock-developers/jmock-library/archive/2.8.4.tar.gz
 Source0  : https://github.com/jmock-developers/jmock-library/archive/2.8.4.tar.gz
-Source1  : https://repo1.maven.org/maven2/org/jmock/jmock-parent/2.8.4/jmock-parent-2.8.4.pom
-Source2  : https://repo1.maven.org/maven2/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.jar
-Source3  : https://repo1.maven.org/maven2/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.pom
+Source1  : https://repo.maven.apache.org/maven2/org/jmock/jmock-junit4/2.8.4/jmock-junit4-2.8.4.jar
+Source2  : https://repo.maven.apache.org/maven2/org/jmock/jmock-junit4/2.8.4/jmock-junit4-2.8.4.pom
+Source3  : https://repo1.maven.org/maven2/org/jmock/jmock-parent/2.8.4/jmock-parent-2.8.4.pom
+Source4  : https://repo1.maven.org/maven2/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.jar
+Source5  : https://repo1.maven.org/maven2/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -31,14 +33,20 @@ data components for the mvn-jmock package.
 %build
 
 %install
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-junit4/2.8.4
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-junit4/2.8.4/jmock-junit4-2.8.4.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-junit4/2.8.4
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-junit4/2.8.4/jmock-junit4-2.8.4.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-parent/2.8.4
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-parent/2.8.4
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-parent/2.8.4/jmock-parent-2.8.4.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.pom
 
 
 %files
@@ -46,6 +54,8 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jmock/jmock-testjar
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/jmock/jmock-junit4/2.8.4/jmock-junit4-2.8.4.jar
+/usr/share/java/.m2/repository/org/jmock/jmock-junit4/2.8.4/jmock-junit4-2.8.4.pom
 /usr/share/java/.m2/repository/org/jmock/jmock-parent/2.8.4/jmock-parent-2.8.4.pom
 /usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.jar
 /usr/share/java/.m2/repository/org/jmock/jmock-testjar/2.8.4/jmock-testjar-2.8.4.pom
