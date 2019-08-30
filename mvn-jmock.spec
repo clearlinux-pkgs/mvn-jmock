@@ -4,7 +4,7 @@
 #
 Name     : mvn-jmock
 Version  : 2.8.4
-Release  : 3
+Release  : 4
 URL      : https://github.com/jmock-developers/jmock-library/archive/2.8.4.tar.gz
 Source0  : https://github.com/jmock-developers/jmock-library/archive/2.8.4.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/jmock/jmock-junit4/2.8.4/jmock-junit4-2.8.4.jar
